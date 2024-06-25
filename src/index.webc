@@ -1,0 +1,8 @@
+---
+layout: layouts/layout.webc
+title: CV | Murray
+---
+
+<main>
+	<h1>My CV</h1>
+</main>

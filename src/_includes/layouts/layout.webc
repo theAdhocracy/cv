@@ -1,0 +1,40 @@
+---
+title: CV | Murray
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="The CV of Murray Champernowne, UI engineer."
+		/>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title webc:if="title" @html="`${title}`"></title>
+		<link
+			webc:keep
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			webc:keep
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link webc:keep href="/styles/reset.css" rel="stylesheet" />
+		<link webc:keep href="/styles/theme.css" rel="stylesheet" />
+		<style @raw="getBundle('css')" webc:keep></style>
+	</head>
+	<body>
+		<header>
+			<p>Header</p>
+		</header>
+		<template @html="content" webc:nokeep></template>
+		<footer>
+			<p>Footer</p>
+		</footer>
+	</body>
+	<script webc:keep :src="url(getBundleFileUrl('js'))" type="module"></script>
+</html>

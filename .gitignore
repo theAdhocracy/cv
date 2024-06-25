@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# Mac files
+.DS_Store
+
+# Secrets
+.env
+.env.production
+.env.staging
+.env.development
+
+# Build output
+_site
