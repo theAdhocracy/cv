@@ -3,6 +3,435 @@ layout: layouts/layout.webc
 title: CV | Murray
 ---
 
-<main>
-	<h1>My CV</h1>
+<main class="u-page-grid u-full">
+	<section id="intro">
+		<div class="blob">
+			<img
+				src="./assets/headshot-wide.jpg"
+				alt="Headshot of Murray, a white-skinned person with a beard, glasses, and mid-length brown hair with a slight quiff. They are smiling and wearing a white t-shirt with miniature black lobsters printed on it."
+			/>
+		</div>
+		<svg viewBox="0 0 478.9 448.2" width="0" height="0" aria-hidden="true">
+			<clipPath
+				id="blob"
+				clipPathUnits="objectBoundingBox"
+				transform="scale(0.002088, 0.002231)"
+			>
+				<path
+					class="st0"
+					d="M360.5,34.5c23.8,31,24,83,46.5,126.5s67.3,78.5,71.6,113.7c4.2,35.2-32,70.6-66.1,105.1s-66.2,68-101.5,68.4
+                      c-35.4,0.5-74.1-32.2-106.4-55.7c-32.4-23.5-58.4-37.9-99.1-55.8C64.8,318.8,9.3,297.5,1.1,266.9c-8.2-30.6,30.8-70.5,61.8-103.9
+                      c30.9-33.4,53.9-60.3,82.4-89.1C173.8,45,207.8,14.4,248.6,4C289.3-6.4,336.7,3.5,360.5,34.5z"
+				/>
+			</clipPath>
+		</svg>
+		<h1 class="u-col-overflow">
+			Murray Champernowne
+			<span><s>Front-End</s> UI Engineer</span>
+		</h1>
+	</section>
+	<section id="summary" class="u-content-grid">
+		<h2>Summary</h2>
+		<p>
+			A web developer and accessibility specialist with eight years professional
+			experience in front-end engineering, design systems, content strategy, and
+			technical documentation.
+		</p>
+		<p>I am passionate about building an inclusive, human-oriented web.</p>
+	</section>
+	<section id="experience" class="u-content-grid">
+		<h2>Experience</h2>
+		<div>
+			<template webc:type="11ty" 11ty:type="liquid">
+				{% for job in experience %}
+				<article data-category="{{ job.category }}">
+					<header>
+						<h3>{{ job.title }}</h3>
+						<p>
+							<a href="{{ job.company.url }}">{{ job.company.name }}</a> /
+							{{ job.location }}
+						</p>
+						<p>{{ job.period.start }} - {{ job.period.end }}</p>
+					</header>
+					{{ job.blurb }}
+				</article>
+				{% endfor %}
+			</template>
+		</div>
+	</section>
+	<section id="education" class="u-content-grid u-sidebar">
+		<h2>Education</h2>
+		<ul role="list">
+			<li>
+				<p>Natural Sciences - 2:1 BSc (HONS)</p>
+				<p>Durham University</p>
+				<p>2010 to 2013</p>
+			</li>
+			<li>
+				<p>Software Engineering - 2:1 Certificate (HONS)</p>
+				<p>Durham University</p>
+				<p>2009 to 2010</p>
+			</li>
+			<li>
+				<p>A Levels - Geography (A); Biology (A); Physics (B)</p>
+				<p>Austin Friars, Carlisle</p>
+				<p>2007 to 2009</p>
+			</li>
+		</ul>
+	</section>
+	<section id="skills" class="u-content-grid u-sidebar">
+		<h2>Skills</h2>
+		<h3>Technical</h3>
+		<ul role="list">
+			<li>CSS</li>
+			<li>Accessibility</li>
+			<li>WCAG</li>
+			<li>WAI-ARIA</li>
+			<li>Next.js</li>
+			<li>Gatsby</li>
+			<li>Astro</li>
+			<li>11ty</li>
+			<li>SvelteKit</li>
+			<li>Svelte</li>
+			<li>React</li>
+			<li>GraphQL</li>
+			<li>Storybook</li>
+			<li>Jest</li>
+			<li>Testing Library</li>
+			<li>Cypress</li>
+			<li>Chromatic</li>
+			<li>TypeScript</li>
+			<li>Sass</li>
+
+			<li>Vercel</li>
+			<li>Netlify</li>
+			<li>Git</li>
+			<li>GitHub</li>
+			<li>BitBucket</li>
+		</ul>
+		<h3>Content Management</h3>
+		<ul role="list">
+			<li>Design Systems</li>
+			<li>Craft CMS</li>
+			<li>Contentful</li>
+			<li>Sanity.io</li>
+			<li>Adobe Creative Suite</li>
+			<li>Copywriting</li>
+			<li>Video Editing</li>
+			<li>Web Analytics</li>
+			<li>SEO</li>
+		</ul>
+		<h3>Interests</h3>
+		<ul role="list">
+			<li>Photography</li>
+			<li>Rewilding</li>
+			<li>Travel</li>
+			<li>IndieWeb</li>
+		</ul>
+	</section>
+	<aside id="testimonials" class="u-content-grid u-sidebar">
+		<h2>Testimonials</h2>
+		<p>Full references available on request</p>
+	</aside>
+	<aside id="contact" class="u-content-grid u-sidebar">
+		<h2>Contact Details</h2>
+		<address>
+			<dl>
+				<dt>Email</dt>
+				<dd>
+					<a href="mailto:murrayadcock+cv@gmail.com">murrayadcock@gmail.com</a>
+				</dd>
+				<dt>Phone</dt>
+				<dd><a href="tel:+447979423079">(+44) 7979 423 079</a></dd>
+				<dt>GitHub</dt>
+				<dd>
+					<a href="https://github.com/theAdhocracy">github.com/theAdhocracy</a>
+				</dd>
+				<dt>Website</dt>
+				<dd>
+					<a href="https://theadhocracy.co.uk">theadhocracy.co.uk</a>
+				</dd>
+				<dt>Address</dt>
+				<dd>
+					1 River Gardens,<br />
+					Carshalton, London,<br />
+					SM5 2NH
+				</dd>
+			</dl>
+		</address>
+	</aside>
 </main>
+
+<style>
+	#intro {
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	@media (width > 750px) {
+		#intro {
+			grid-template-columns: min(14rem, 23vw) 1fr;
+			gap: 3rem;
+
+			grid-column: overflow;
+
+			& > :is(div, svg) {
+				grid-column: 1;
+				grid-row: 1;
+			}
+
+			h1 {
+				grid-column: 2;
+				grid-row: 1;
+				align-self: end;
+				max-width: 15ch;
+				line-height: 1;
+			}
+
+			.blob {
+				max-width: 13.75rem;
+			}
+		}
+	}
+
+	.blob img {
+		clip-path: url("#blob");
+		z-index: 2;
+	}
+
+	.blob {
+		position: relative;
+		margin-block-start: 1rem;
+		max-width: min(20rem, 80dvw);
+		place-self: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			right: 1rem;
+			top: -1rem;
+			rotate: 55deg;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: color-mix(in lch, var(--c-green) 50%, white 50%);
+			clip-path: url("#blob");
+			z-index: -1;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			left: -1rem;
+			top: 0;
+			rotate: -15deg;
+			scale: 110%;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: color-mix(in lch, var(--c-blue) 50%, transparent);
+			clip-path: url("#blob");
+		}
+	}
+
+	h1 {
+		margin-block-end: 1rem;
+		font-size: clamp(2.5rem, 2.1522rem + 1.7391vi, 3.5rem);
+
+		s {
+			color: var(--c-text-light);
+			font-size: inherit;
+			font-weight: normal;
+		}
+	}
+
+	h1 > span {
+		display: block;
+		margin-block-start: 0.5em;
+		font-size: 1.5rem;
+		color: var(--c-blue);
+		font-weight: bold;
+	}
+
+	:is(section, aside, div.blocker) + :is(section, aside) {
+		margin-block-start: 1rem;
+	}
+
+	h2 {
+		display: flex;
+		align-items: center;
+		font-size: 1rem;
+		letter-spacing: 0.15ch;
+		white-space: nowrap;
+
+		&::after,
+		&::before {
+			content: "";
+			display: inline-block;
+			height: 1em;
+			background: var(--g-blue-green);
+			mask: radial-gradient(
+						7.39px at 50% calc(100% + 2px),
+						#0000 calc(99% - 4px),
+						#000 calc(101% - 4px) 99%,
+						#0000 101%
+					)
+					calc(50% - 10px) calc(50% - 4.5px + 0.5px) / 20px 9px repeat-x,
+				radial-gradient(
+						7.39px at 50% -2px,
+						#0000 calc(99% - 4px),
+						#000 calc(101% - 4px) 99%,
+						#0000 101%
+					)
+					50% calc(50% + 4.5px) / 20px 9px repeat-x;
+		}
+
+		&::after {
+			width: 100%;
+			margin-inline-start: 0.75em;
+			transform: rotate(180deg);
+		}
+
+		&::before {
+			width: 5rem;
+			margin-inline-end: 0.75em;
+		}
+	}
+
+	#experience {
+		& > div {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0 2rem;
+		}
+
+		article + article {
+			margin-block-start: 1.5rem;
+		}
+
+		article {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+
+			header {
+				h3 {
+					margin-block-end: 0.5em;
+				}
+
+				h3::after {
+					content: "";
+					display: block;
+					height: 1rem;
+					width: 33%;
+					background: var(--g-blue-green);
+					mask: radial-gradient(
+								7.39px at 50% calc(100% + 2px),
+								#0000 calc(99% - 4px),
+								#000 calc(101% - 4px) 99%,
+								#0000 101%
+							)
+							calc(50% - 10px) calc(50% - 4.5px + 0.5px) / 20px 9px repeat-x,
+						radial-gradient(
+								7.39px at 50% -2px,
+								#0000 calc(99% - 4px),
+								#000 calc(101% - 4px) 99%,
+								#0000 101%
+							)
+							50% calc(50% + 4.5px) / 20px 9px repeat-x;
+				}
+
+				p,
+				a {
+					font-size: 0.875rem;
+				}
+
+				p {
+					color: var(--c-text-light);
+				}
+
+				p + p {
+					margin-block-start: 0.25em;
+				}
+			}
+
+			& > p {
+				line-height: 1.33;
+			}
+		}
+
+		article:first-of-type h3 {
+			margin-block-start: 1rem;
+		}
+	}
+
+	#education {
+		li p:first-child {
+			margin-block-end: 0.25rem;
+		}
+
+		li p:last-child {
+			margin-block-start: 0.1rem;
+		}
+
+		li p:not(:first-child) {
+			font-size: 0.875rem;
+			color: var(--c-text-light);
+		}
+	}
+
+	#skills {
+		h3 {
+			font-size: 1.2rem;
+		}
+
+		ul {
+			margin-block-end: 1.25rem;
+			flex-direction: row;
+			gap: 0.5rem 1rem;
+			flex-wrap: wrap;
+		}
+
+		li {
+			text-decoration: underline;
+			text-decoration-style: wavy;
+			text-underline-offset: 0.2em;
+			text-decoration-color: var(--c-blue);
+		}
+	}
+
+	#contact {
+		dl {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.2rem 1rem;
+		}
+
+		dt {
+			min-height: 100%;
+			width: 25%;
+		}
+
+		dd {
+			min-width: 70%;
+			margin-block-end: 1rem;
+		}
+	}
+
+	@media (width >= 1024px) {
+		#experience {
+			grid-row: span 5;
+		}
+
+		#education {
+			grid-row: span 2;
+		}
+
+		#summary {
+			h2 {
+				display: none;
+			}
+		}
+	}
+</style>
