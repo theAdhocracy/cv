@@ -1,13 +1,186 @@
+@font-face {
+	font-family: "Vremena";
+	src: url("/assets/vremenagroteskmedium-webfont.woff2") format("woff2"),
+		url("/assets/vremenagroteskmedium-webfont.woff") format("woff");
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Atkinson Hyperlegible";
+	src: url("/assets/Atkinson-Hyperlegible-Regular-102.woff2") format("woff2"),
+		url("/assets/Atkinson-Hyperlegible-Regular-102.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
 :root {
 	/* Design Tokens */
+	--font-title: "Vremena", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+	--font-copy: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont,
+		Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji;
+
+	--lavender: #faf8fc;
+	--olivine: #a0c269;
+	--slate: #353535;
+	--lake: #5172a3;
+	--midnight: #1c0118;
+	--dusk: #656565;
 
 	/* Utilities */
+	--c-bg: var(--lavender);
+	--c-text: var(--midnight);
+	--c-text-light: var(--dusk);
+	--c-title: var(--slate);
+
+	--c-green: var(--olivine);
+	--c-blue: var(--lake);
+
+	--g-blue-green: linear-gradient(
+		90deg,
+		var(--slate) 0%,
+		var(--c-green) 35%,
+		var(--c-blue) 100%
+	);
 }
 
 /* Element Defaults */
 
-h1 {
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+body {
+	width: 100dvw;
+	max-width: 100%;
+	background-color: var(--c-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-title);
+	font-weight: 200;
+	line-height: 1.2;
+	color: var(--c-title);
+}
+
+:not(h1, h2, h3, h4, h5, h6) {
+	font-family: var(--font-copy);
+	font-size: 1.125rem;
+	line-height: 1.2;
+	color: var(--c-text);
+}
+
+a {
+	font-weight: bold;
+	text-decoration-style: wavy;
+	text-underline-offset: 0.2em;
+	color: var(--c-blue);
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+p,
+dl {
+	max-width: 45ch;
 }
 
 /* Utility Classes */
+
+.u-page-grid {
+	--page-gutter: 1rem;
+	--page-overflow: var(--page-gutter);
+
+	@media (width > 500px) {
+		--page-gutter: max(1rem, 8dvw);
+		--page-overflow: clamp(1rem, 10dvw, 4rem);
+	}
+
+	display: grid;
+	grid-template-columns:
+		[full-start]
+		var(--page-gutter)
+		[overflow-start]
+		var(--page-overflow)
+		[content-start] calc(
+			(100% - (2 * var(--page-overflow))) - (2 * var(--page-gutter))
+		)
+		[content-end]
+		var(--page-overflow)
+		[overflow-end]
+		var(--page-gutter)
+		[full-end];
+
+	gap: 1rem 0;
+
+	:where(& > *) {
+		grid-column: overflow;
+		place-self: start;
+		width: 100%;
+	}
+
+	@media (width >= 1024px) {
+		--page-content: calc(100% - (2 * var(--page-gutter)));
+		--page-sidebar: min(calc(var(--page-content) / 100 * 33), 25rem);
+
+		grid-template-columns:
+			[full-start]
+			var(--page-gutter)
+			[overflow-start sidebar-start]
+			var(--page-sidebar)
+			[sidebar-end]
+			1rem
+			[content-start] calc(var(--page-content) - var(--page-sidebar) - 5rem)
+			[content-end overflow-end]
+			var(--page-gutter)
+			[full-end];
+
+		gap: 1rem;
+		grid-auto-flow: dense;
+
+		:where(& > *) {
+			grid-column: content;
+			width: 100%;
+		}
+
+		:where(& > .u-sidebar) {
+			grid-column: sidebar;
+		}
+	}
+}
+
+.u-content-grid {
+	--content-overflow: 1rem;
+
+	display: grid;
+	grid-template-columns:
+		[overflow-start]
+		var(--content-overflow)
+		[content-start] calc((100% - (2 * var(--content-overflow))))
+		[content-end]
+		var(--content-overflow)
+		[overflow-end];
+	gap: 1rem 0;
+
+	:where(& > *) {
+		grid-column: content;
+	}
+
+	:where(& > h2) {
+		grid-column: overflow;
+	}
+}
+
+.u-full {
+	grid-column: full;
+}
+
+.u-overflow {
+	grid-column: overflow;
+}

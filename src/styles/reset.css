@@ -73,6 +73,10 @@ ol[role="list"] {
 	padding: 0;
 }
 
+address {
+	font-style: normal;
+}
+
 #root,
 #__next {
 	isolation: isolate;
