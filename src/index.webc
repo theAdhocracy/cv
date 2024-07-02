@@ -85,41 +85,39 @@ title: CV | Murray
 		<ul role="list">
 			<li>CSS</li>
 			<li>Accessibility</li>
-			<li>WCAG</li>
-			<li>WAI-ARIA</li>
-			<li>Next.js</li>
-			<li>Gatsby</li>
 			<li>Astro</li>
+			<li>Next.js</li>
 			<li>11ty</li>
+			<li>WAI-ARIA</li>
+			<li>WCAG</li>
+			<li>Gatsby</li>
 			<li>SvelteKit</li>
 			<li>Svelte</li>
 			<li>React</li>
 			<li>GraphQL</li>
 			<li>Storybook</li>
 			<li>Jest</li>
-			<li>Testing Library</li>
 			<li>Cypress</li>
-			<li>Chromatic</li>
-			<li>TypeScript</li>
+			<li>Testing Library</li>
 			<li>Sass</li>
-
+			<li>Chromatic</li>
 			<li>Vercel</li>
 			<li>Netlify</li>
+			<li>TypeScript</li>
 			<li>Git</li>
 			<li>GitHub</li>
-			<li>BitBucket</li>
 		</ul>
 		<h3>Content Management</h3>
 		<ul role="list">
 			<li>Design Systems</li>
+			<li>Sanity.io</li>
 			<li>Craft CMS</li>
 			<li>Contentful</li>
-			<li>Sanity.io</li>
 			<li>Adobe Creative Suite</li>
+			<li>SEO</li>
 			<li>Copywriting</li>
 			<li>Video Editing</li>
-			<li>Web Analytics</li>
-			<li>SEO</li>
+			<li>Analytics</li>
 		</ul>
 		<h3>Interests</h3>
 		<ul role="list">
@@ -168,7 +166,7 @@ title: CV | Murray
 		gap: 0.5rem;
 	}
 
-	@media (width > 750px) {
+	@media print, (width > 750px) {
 		#intro {
 			grid-template-columns: min(14rem, 23vw) 1fr;
 			gap: 3rem;
@@ -348,6 +346,7 @@ title: CV | Murray
 				}
 
 				p {
+					break-inside: avoid-page;
 					color: var(--c-text-light);
 				}
 
@@ -419,7 +418,7 @@ title: CV | Murray
 		}
 	}
 
-	@media (width >= 1024px) {
+	@media print, (width >= 1024px) {
 		#experience {
 			grid-row: span 5;
 		}
@@ -432,6 +431,30 @@ title: CV | Murray
 			h2 {
 				display: none;
 			}
+		}
+	}
+
+	/* Print */
+
+	@media print {
+		#experience article:nth-of-type(2) > p:last-child {
+			margin-block-start: 5.5rem;
+		}
+
+		#education ul li:nth-of-type(3) {
+			display: none;
+		}
+
+		#education {
+			grid-row: 4;
+		}
+
+		#contact {
+			grid-row: 2 / 4;
+		}
+
+		#skills h3:nth-of-type(2) {
+			margin-block-start: 4rem;
 		}
 	}
 </style>
