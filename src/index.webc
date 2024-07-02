@@ -212,7 +212,7 @@ title: CV | Murray
 			display: block;
 			width: 100%;
 			height: 100%;
-			background-color: color-mix(in lch, var(--c-green) 50%, white 50%);
+			background-color: color-mix(in lch, var(--c-green), transparent);
 			clip-path: url("#blob");
 			z-index: -1;
 		}
