@@ -37,7 +37,7 @@ title: CV | Murray
 			experience in front-end engineering, design systems, content strategy, and
 			technical documentation.
 		</p>
-		<p>I am passionate about building an inclusive, human-oriented web.</p>
+		<p>I am passionate about building an inclusive, human-centred web.</p>
 	</section>
 	<section id="experience" class="u-content-grid">
 		<h2>Experience</h2>
@@ -298,9 +298,12 @@ title: CV | Murray
 	}
 
 	#experience {
+		height: 100%;
+		place-content: start;
+		max-width: 125ch;
+
 		& > div {
-			display: flex;
-			flex-wrap: wrap;
+			columns: 40ch 2;
 			gap: 0 2rem;
 		}
 
@@ -312,6 +315,8 @@ title: CV | Murray
 			display: flex;
 			flex-direction: column;
 			gap: 0.75rem;
+			max-width: 50ch;
+			break-inside: avoid;
 
 			header {
 				h3 {
@@ -424,13 +429,17 @@ title: CV | Murray
 		}
 
 		#education {
-			grid-row: span 2;
+			grid-row: 4;
 		}
 
 		#summary {
 			h2 {
 				display: none;
 			}
+		}
+
+		#contact {
+			grid-row: 2 / 4;
 		}
 	}
 
@@ -443,14 +452,6 @@ title: CV | Murray
 
 		#education ul li:nth-of-type(3) {
 			display: none;
-		}
-
-		#education {
-			grid-row: 4;
-		}
-
-		#contact {
-			grid-row: 2 / 4;
 		}
 
 		#skills h3:nth-of-type(2) {
