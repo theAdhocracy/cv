@@ -85,10 +85,25 @@ h6 {
 }
 
 a {
+	position: relative;
 	font-weight: bold;
 	text-decoration-style: wavy;
 	text-underline-offset: 0.2em;
 	color: var(--c-blue);
+
+	&:hover,
+	&:focus-visible {
+		color: color-mix(in lch, var(--c-green), black 35%);
+		outline: transparent;
+	}
+
+	&:focus-visible::before {
+		content: "➡";
+		position: absolute;
+		left: -2rem;
+		top: 0;
+		filter: hue-rotate(220deg);
+	}
 }
 
 ul {

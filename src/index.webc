@@ -300,11 +300,12 @@ title: CV | Murray
 	#experience {
 		height: 100%;
 		place-content: start;
-		max-width: 125ch;
+		max-width: 105ch;
 
 		& > div {
 			columns: 40ch 2;
 			gap: 0 2rem;
+			padding-block-start: 1rem;
 		}
 
 		article + article {
@@ -363,10 +364,6 @@ title: CV | Murray
 			& > p {
 				line-height: 1.33;
 			}
-		}
-
-		article:first-of-type h3 {
-			margin-block-start: 1rem;
 		}
 	}
 
