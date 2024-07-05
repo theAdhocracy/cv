@@ -7,10 +7,10 @@ title: CV | Murray
 	<section id="intro">
 		<picture class="blob">
 			<source
-				sizes="(max-width: 750px) 320px, 250px"
+				sizes="(max-width: 750px) 360px, 250px"
 				srcset="
 					./assets/headshot-2x.webp 640w,
-					./assets/headshot-1x.webp 320w,
+					./assets/headshot-1x.webp 360w,
 					./assets/headshot.webp    250w
 				"
 				type="image/webp"
@@ -19,15 +19,16 @@ title: CV | Murray
 				src="./assets/headshot-1x.jpg"
 				srcset="
 					./assets/headshot-2x.jpg 640w,
-					./assets/headshot-1x.jpg 320w,
+					./assets/headshot-1x.jpg 360w,
 					./assets/headshot.jpg    250w
 				"
-				sizes="(max-width: 750px) 320px, 250px"
+				sizes="(max-width: 750px) 360px, 250px"
 				alt="Headshot of Murray, a white-skinned person with a beard, glasses, and mid-length brown hair with a slight quiff. They are smiling and wearing a white t-shirt with miniature black lobsters printed on it."
 				decoding="async"
 				height="360"
 				width="360"
 				loading="eager"
+				fetchpriority="high"
 			/>
 		</picture>
 		<svg viewBox="0 0 478.9 448.2" width="0" height="0" aria-hidden="true">
