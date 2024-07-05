@@ -30,12 +30,14 @@
 	--lake: #5172a3;
 	--midnight: #1c0118;
 	--dusk: #656565;
+	--dawn: #888888;
 
 	/* Utilities */
 	--c-bg: var(--lavender);
 	--c-text: var(--midnight);
 	--c-text-light: var(--dusk);
 	--c-title: var(--slate);
+	--c-highlight: var(--lake);
 
 	--c-green: var(--olivine);
 	--c-blue: var(--lake);
@@ -46,6 +48,38 @@
 		var(--c-green) 35%,
 		var(--c-blue) 100%
 	);
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not([data-theme="light"]) {
+		--lake: color-mix(in lch, #5172a3, white 30%);
+		--lavender: #cdcdcd;
+
+		--c-bg: var(--midnight);
+		--c-text: var(--lavender);
+		--c-title: var(--olivine);
+		--c-text-light: var(--dawn);
+	}
+
+	a:hover,
+	a:focus-visible {
+		color: var(--c-green);
+	}
+}
+
+html[data-theme="dark"] {
+	--lake: color-mix(in lch, #5172a3, white 30%);
+	--lavender: #cdcdcd;
+
+	--c-bg: var(--midnight);
+	--c-text: var(--lavender);
+	--c-title: var(--olivine);
+	--c-text-light: var(--dawn);
+
+	a:hover,
+	a:focus-visible {
+		color: var(--c-green);
+	}
 }
 
 /* Element Defaults */
@@ -91,7 +125,7 @@ a {
 	font-weight: bold;
 	text-decoration-style: wavy;
 	text-underline-offset: 0.2em;
-	color: var(--c-blue);
+	color: var(--c-highlight);
 
 	&:hover,
 	&:focus-visible {

@@ -16,15 +16,305 @@ title: CV | Murray
 			type="image/svg+xml"
 			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📃</text></svg>"
 		/>
+		<meta name="color-scheme" content="light dark" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="#1c0118"
+		/>
+		<meta name="theme-color" content="#5172a3" />
 		<title webc:if="title" @html="`${title}`"></title>
 		<link webc:keep href="/styles/reset.css" rel="stylesheet" />
 		<link webc:keep href="/styles/theme.css" rel="stylesheet" />
 		<style @raw="getBundle('css')" webc:keep></style>
+		<script>
+			// Retrieve existing theme preference
+			let initialTheme = localStorage.getItem("theme") || "system";
+			document.documentElement.setAttribute("data-theme", initialTheme);
+		</script>
 	</head>
 	<body class="u-page-grid">
-		<!-- <header class="u-full"></header> -->
+		<header class="u-full">
+			<div id="theme-switcher">
+				<button
+					type="button"
+					aria-controls="theme-options"
+					aria-expanded="false"
+					aria-label="Open theme options"
+					title="Theme options"
+				>
+					<?xml version="1.0" encoding="UTF-8"?><svg
+						width="24px"
+						height="24px"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						color="#000000"
+					>
+						<path
+							d="M4.5 16.5L18.5 10"
+							stroke="#000000"
+							stroke-width="1.5"
+						></path>
+						<path
+							d="M20 14C20 9.58172 12 2 12 2C12 2 4 9.58172 4 14C4 18.4183 7.58172 22 12 22C16.4183 22 20 18.4183 20 14Z"
+							stroke="#000000"
+							stroke-width="1.5"
+						></path>
+					</svg>
+				</button>
+				<ul id="theme-options" role="list" hidden>
+					<li>
+						<button
+							type="button"
+							data-theme="dark"
+							aria-label="Dark theme"
+							title="Dark theme"
+						>
+							<svg
+								width="24px"
+								height="24px"
+								stroke-width="1.5"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								color="#000000"
+							>
+								<path
+									d="M3 11.5066C3 16.7497 7.25034 21 12.4934 21C16.2209 21 19.4466 18.8518 21 15.7259C12.4934 15.7259 8.27411 11.5066 8.27411 3C5.14821 4.55344 3 7.77915 3 11.5066Z"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<button
+							type="button"
+							data-theme="light"
+							aria-label="Light theme"
+							title="Light theme"
+						>
+							<svg
+								width="24px"
+								height="24px"
+								stroke-width="1.5"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								color="#000000"
+							>
+								<path
+									d="M21 2L20 3"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M3 2L4 3"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M21 16L20 15"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M3 16L4 15"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M9 18H15"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M10 21H14"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M11.9998 3C7.9997 3 5.95186 4.95029 5.99985 8C6.02324 9.48689 6.4997 10.5 7.49985 11.5C8.5 12.5 9 13 8.99985 15H14.9998C15 13.0001 15.5 12.5 16.4997 11.5001L16.4998 11.5C17.4997 10.5 17.9765 9.48689 17.9998 8C18.0478 4.95029 16 3 11.9998 3Z"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+							</svg>
+						</button>
+					</li>
+					<li>
+						<button
+							type="button"
+							data-theme="system"
+							aria-label="System theme"
+							title="System theme"
+						>
+							<svg
+								width="24px"
+								height="24px"
+								stroke-width="1.5"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								color="#000000"
+							>
+								<path
+									d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path
+									d="M19.6224 10.3954L18.5247 7.7448L20 6L18 4L16.2647 5.48295L13.5578 4.36974L12.9353 2H10.981L10.3491 4.40113L7.70441 5.51596L6 4L4 6L5.45337 7.78885L4.3725 10.4463L2 11V13L4.40111 13.6555L5.51575 16.2997L4 18L6 20L7.79116 18.5403L10.397 19.6123L11 22H13L13.6045 19.6132L16.2551 18.5155C16.6969 18.8313 18 20 18 20L20 18L18.5159 16.2494L19.6139 13.598L21.9999 12.9772L22 11L19.6224 10.3954Z"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</header>
 		<template @html="content" webc:nokeep></template>
-		<!-- <footer class="u-full"></footer> -->
+		<!-- <footer class="u-full">
+		</footer> -->
 	</body>
 	<script webc:keep :src="url(getBundleFileUrl('js'))" type="module"></script>
 </html>
+
+<script>
+	// Function: Set theme
+	const SetTheme = (theme) => {
+		// Set data attribute for styles
+		themeRoot.setAttribute("data-theme", theme);
+
+		// Record user preference
+		localStorage.setItem("theme", theme);
+	};
+
+	// Function: Show theme menu
+	const ShowThemeMenu = (state) => {
+		// Show/hide options
+		themeMenu.toggleAttribute("hidden");
+
+		if (state === "show") {
+			themeToggle.setAttribute("aria-expanded", "true");
+			themeToggle.setAttribute("aria-label", "Close theme options");
+		} else {
+			themeToggle.setAttribute("aria-expanded", "false");
+			themeToggle.setAttribute("aria-label", "Open theme options");
+		}
+	};
+
+	// Theme toggle (dark/light mode)
+	const themeToggle = document.querySelector("#theme-switcher > button");
+	const themeMenu = document.querySelector("#theme-options");
+	const themeOptions = document.querySelectorAll("#theme-switcher ul button");
+	const themeRoot = document.querySelector("html");
+
+	// Open/close theme menu
+	themeToggle.addEventListener("click", () => {
+		if (themeToggle.getAttribute("aria-expanded") === "true") {
+			ShowThemeMenu("hide");
+		} else {
+			ShowThemeMenu("show");
+			// Close menu if click elsewhere on the page
+			window.addEventListener(
+				"mouseup",
+				(event) => {
+					if (event.target.closest("#theme-switcher")) {
+						return;
+					} else {
+						ShowThemeMenu("hide");
+					}
+				},
+				{ once: true }
+			);
+		}
+	});
+
+	// Retrieve existing theme preference
+	let theme = localStorage.getItem("theme") || "system";
+
+	// Add event to each theme option
+	themeOptions.forEach((option) => {
+		option.addEventListener("click", () => {
+			// Update theme (if present)
+			if (option.dataset.theme) {
+				theme = option.dataset.theme;
+			}
+
+			SetTheme(theme);
+
+			// Close menu if click elsewhere on the page
+			window.addEventListener(
+				"mouseup",
+				(event) => {
+					if (event.target.closest("#theme-switcher")) {
+						return;
+					} else {
+						ShowThemeMenu("hide");
+					}
+				},
+				{ once: true }
+			);
+		});
+	});
+</script>
+
+<style>
+	#theme-switcher {
+		position: absolute;
+		right: 1rem;
+		top: 0.75rem;
+		z-index: 2;
+
+		@media (width > 750px) {
+			right: 2rem;
+			top: 1.5rem;
+		}
+
+		button {
+			aspect-ratio: 1 / 1;
+			border-radius: 50%;
+			border: none;
+			padding: 0.5rem;
+		}
+
+		button:focus-visible {
+			outline: 3px solid var(--c-green);
+			outline-offset: 0.2rem;
+		}
+
+		ul {
+			margin-block-start: 1rem;
+		}
+	}
+
+	@media print {
+		body > header,
+		body > footer {
+			display: none;
+		}
+	}
+</style>
