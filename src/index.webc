@@ -5,12 +5,31 @@ title: CV | Murray
 
 <main class="u-page-grid u-full">
 	<section id="intro">
-		<div class="blob">
-			<img
-				src="./assets/headshot-wide.jpg"
-				alt="Headshot of Murray, a white-skinned person with a beard, glasses, and mid-length brown hair with a slight quiff. They are smiling and wearing a white t-shirt with miniature black lobsters printed on it."
+		<picture class="blob">
+			<source
+				sizes="(max-width: 750px) 320px, 250px"
+				srcset="
+					./assets/headshot-2x.webp 640w,
+					./assets/headshot-1x.webp 320w,
+					./assets/headshot.webp    250w
+				"
+				type="image/webp"
 			/>
-		</div>
+			<img
+				src="./assets/headshot-1x.jpg"
+				srcset="
+					./assets/headshot-2x.jpg 640w,
+					./assets/headshot-1x.jpg 320w,
+					./assets/headshot.jpg    250w
+				"
+				sizes="(max-width: 750px) 320px, 250px"
+				alt="Headshot of Murray, a white-skinned person with a beard, glasses, and mid-length brown hair with a slight quiff. They are smiling and wearing a white t-shirt with miniature black lobsters printed on it."
+				decoding="async"
+				height="360"
+				width="360"
+				loading="eager"
+			/>
+		</picture>
 		<svg viewBox="0 0 478.9 448.2" width="0" height="0" aria-hidden="true">
 			<clipPath
 				id="blob"
@@ -173,7 +192,7 @@ title: CV | Murray
 
 			grid-column: overflow;
 
-			& > :is(div, svg) {
+			& > :is(picture, svg) {
 				grid-column: 1;
 				grid-row: 1;
 			}
