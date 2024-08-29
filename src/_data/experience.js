@@ -13,7 +13,7 @@ function setExperience() {
 				end: "2024",
 			},
 			blurb:
-				"<p>Worked as a Senior Consultant within the Creative Technology team, focusing on the NA and EMEA regions.</p><p>Specialised in the Jamstack (Next.js/Storybook/Astro/SvelteKit/Vercel) and accessibility, advising clients on content modelling (Contentful/Sanity.io) and front-end best practices across a range of projects, from enterprise-scale rebuilds, to greenfield design systems, to a bespoke AI/LLM-backed GUI (ChatGPT/Clause 3/Python/React) for medical data analysis.</p><p>Also developed internal accessibility documentation, including maintaining up-to-date legal guidance for the EU, Canada, UK, and US, whilst helping upskill teams across the business via remote learning sessions and presentations.</p>",
+				"<p>Worked as a Senior Consultant within the Creative Technology team, focusing on the NA and EMEA regions.</p><p>Specialised in the Jamstack (Next.js/Storybook/Astro/SvelteKit/Vercel) and accessibility, advising clients on content modelling (Contentful/Sanity.io) and front-end best practices across a range of projects, from enterprise-scale rebuilds, to greenfield design systems, to a bespoke AI/LLM-backed GUI (ChatGPT/Claude 3/Python/React) for medical data analysis.</p><p>Also developed internal accessibility documentation, including maintaining up-to-date legal guidance for the EU, Canada, UK, and US, whilst helping upskill teams across the business via remote learning sessions and presentations.</p>",
 		},
 		{
 			title: "Front-End Engineer (Mid)",
