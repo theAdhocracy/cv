@@ -308,7 +308,7 @@ title: CV | Murray
 		&::after {
 			width: 100%;
 			margin-inline-start: 0.75em;
-			transform: rotate(180deg);
+			transform: scale(-1, 1);
 		}
 
 		&::before {
